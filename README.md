@@ -29,3 +29,8 @@ docker container run -it -p 8080:8080 --name spring4shell_victim --rm spring4she
 ## Exploit
 There are two routes defined: `/spring4shell_victim` and `/spring4shell_victim/vulnerable`. You can use this to verify any scanning tools are properly working.
 
+You can verify your code deployed correctly by connecting to a shell on the container and looking in the `/usr/local/tomcat/webapps/` directory.
+```bash
+docker exec -it spring4shell_victim /bin/bash
+```
+
