@@ -27,10 +27,23 @@ docker container run -it -p 8080:8080 --name spring4shell_victim --rm spring4she
 ```
 
 ## Exploit
-There are two routes defined: `/spring4shell_victim` and `/spring4shell_victim/vulnerable`. You can use this to verify any scanning tools are properly working.
+There are two routes defined: `/spring4shell_victim` and `/spring4shell_victim/vulnerable`. You can use this to verify any scanning tools are properly working. The default route (/) is specifically not vulnerable to get you to think about how to configure your scanning tools to find vulnerable endpoints.
 
+### Example
+```bash
+# Default route is not vulnerable
+curl -is localhost:9000/spring4shell_victim/?class.module.classLoader.URLs%5b-1%5d
+
+# This route is vulnerable
+curl -is localhost:9000/spring4shell_victim/vulnerable?class.module.classLoader.URLs%5b-1%5d
+```
+
+![screenshot](https://user-images.githubusercontent.com/8271279/161859867-718f165a-6cca-4582-87f8-f6fc8d7bc56a.png)
+
+### Verification
 You can verify your code deployed correctly by connecting to a shell on the container and looking in the `/usr/local/tomcat/webapps/` directory.
 ```bash
 docker exec -it spring4shell_victim /bin/bash
 ```
+NOTE: The POC code above only causes a crash that you can detect (500 error). It does not actually upload any code.
 
