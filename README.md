@@ -15,6 +15,11 @@
 # Usage
 
 ## Build
+The following code will quickly build a vulnerable Docker image using the following components:
+* JDK 11.0.14
+* Tomcat 9.0.60
+* Spring 2.6.4
+
 ```bash
 git clone https://github.com/fracturelabs/spring4shell_victim.git
 cd spring4shell_victim
@@ -31,7 +36,7 @@ There are two routes defined: `/spring4shell_victim` and `/spring4shell_victim/v
 
 ### Example
 ```bash
-# Default route is not vulnerable
+# This route is not vulnerable
 curl -is localhost:9000/spring4shell_victim/?class.module.classLoader.URLs%5b-1%5d
 
 # This route is vulnerable

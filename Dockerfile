@@ -16,7 +16,7 @@ RUN mvn package
 #
 # Run Tomcat with vulnerable WAR
 #
-FROM tomcat:9.0
+FROM tomcat:9.0.60
 
 COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/
 
