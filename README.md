@@ -6,6 +6,7 @@
 </h1>
 
 <h4 align="center">Intentionally vulnerable Spring app to test CVE-2022-22965</h4>
+<p align="center">For more information: <a href="https://www.fracturelabs.com/posts/effective-spring4shell-scanning-exploitation/">https://www.fracturelabs.com/posts/effective-spring4shell-scanning-exploitation/</a></p>
 <p align="center">
   <a href="https://twitter.com/fracturelabs"><img src="https://img.shields.io/badge/twitter-%40fracturelabs-orange.svg" alt="@fracturelabs" height="18"></a>
   <a href="https://twitter.com/brkr19"><img src="https://img.shields.io/badge/twitter-%40brkr19-orange.svg" alt="@brkr19" height="18"></a>
